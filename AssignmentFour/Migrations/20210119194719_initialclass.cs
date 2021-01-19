@@ -98,7 +98,7 @@ namespace AssignmentFour.Migrations
                 table: "Job",
                 column: "StaffCode");
 
-            var sqlFile = Path.Combine(".//Data,Database Script", @"Data.sql");
+            var sqlFile = Path.Combine(".//Data/Database Script", @"Data.sql");
             migrationBuilder.Sql(File.ReadAllText(sqlFile));
         }
 
