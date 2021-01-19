@@ -1,0 +1,40 @@
+﻿@page
+@model AssignmentFour.Pages.Benefits.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Benefit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Benefit.Id" />
+            <div class="form-group">
+                <label asp-for="Benefit.PlanCode" class="control-label"></label>
+                <select asp-for="Benefit.PlanCode" class="form-control" asp-items="ViewBag.PlanCode"></select>
+                <span asp-validation-for="Benefit.PlanCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Benefit.StaffCode" class="control-label"></label>
+                <select asp-for="Benefit.StaffCode" class="form-control" asp-items="ViewBag.StaffCode"></select>
+                <span asp-validation-for="Benefit.StaffCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
